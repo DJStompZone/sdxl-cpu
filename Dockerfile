@@ -1,16 +1,10 @@
-FROM gitpod/workspace-full:latest
+FROM nvcr.io/nvidia/pytorch:21.09-py3
 
 LABEL maintainer="dj@deepai.org"
 
 WORKDIR /workspace
 
-RUN apt-get update && apt-get install -y \
-    libglib2.0-0 \
-    libsm6 \
-    libxext6 \
-    libxrender-dev && \
-    rm -rf /var/lib/apt/lists/* && \
-    pip install diffusers transformers accelerate invisible_watermark mediapy
+RUN apt-get update && apt-get install git ffmpeg libsm6 libxext6 libgl1-mesa-glx -y && pip install -r requirements.txt
 
 COPY sdxl.py /workspace/
 
