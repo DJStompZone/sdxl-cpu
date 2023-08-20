@@ -1,4 +1,4 @@
-FROM python:3.9-slim
+FROM gitpod/workspace-full:latest
 
 LABEL maintainer="dj@deepai.org"
 
