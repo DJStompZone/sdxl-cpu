@@ -4,7 +4,7 @@ LABEL maintainer="dj@deepai.org"
 
 WORKDIR /workspace
 
-RUN apt-get update && apt-get install git ffmpeg libsm6 libxext6 libgl1-mesa-glx -y && pip install -r requirements.txt
+RUN apt-get update && apt-get install git ffmpeg libsm6 libxext6 libgl1-mesa-glx -y && pip3 install -r requirements.txt
 
 COPY sdxl.py /workspace/
 
